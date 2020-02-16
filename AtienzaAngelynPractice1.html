@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Event</title>
+    <script>
+
+    function validation(){
+        let title = document.getElementById('title').value;
+        let date =document.getElementById('date').value;
+        let todate =document.getElementById('date2').value;
+        let postingdate = document.getElementById('postingdate').value;
+        let sel = document.form.event.selectedIndex;
+        if (title==="" || date==="" || todate==="" ||postingdate===""){
+            alert("You must provide all field required!");
+            Practice1.title.focus();
+            return false;
+        }if(sel == "0"){
+            alert("Invalid option! You must choose an Event Type above!");
+            return false;
+        }else{
+            alert("Your entries are successfully sent to the server!");
+            return true;
+        }
+    }
+    </script>
+</head>
+<body>
+    <form name="form">
+        <label></label>Event Type:</label>
+            <select name="event" id="event" required>
+            <option value ="0">Choose one</option>
+            <option value = "1">Event A</option>
+            <option value ="2">Event B</option>
+            <option valuye = "3">Event C</option>
+            </select><br></br>
+        <label>Event Title:  <input type="text" id="title" required></label><br></br>
+        <label>Event Dates:  <input type="date" id = "date" required></label>
+        <label>to <input type ="date" id ="date2" required></label><br></br>
+        <label>Posting Date: <input type="date" id = "postingdate" required></label><br></br>
+
+        <input type="checkbox" id="one" onclick>
+        <label for = "one">Is Registration Required?</label><br></br>
+
+        <input type="checkbox" id="two" onclick>
+        <label>Is the event associated with any Family Programs</label><br></br>
+    
+        <input type="checkbox" id="three" onclick>
+        <label>Upon Registration Completion, Are Users to Receive an Auto Generated Email?</label><br></br>
+    
+        <input type="checkbox" id="four" onclick>
+        <label>Is There a point of contact?</label><br></br>
+    
+        <input type="checkbox" id="five" onclick>
+        <label>Is There a Hosting Command Point of Contract?</label><br></br>
+    
+        <input type = "submit" value = "Save" onclick="validation()">
+        <input type = "submit" value = "Cancel" onclick="alert('Your submission is cancelled!');">
+    </form>
+</body>
+</html>
